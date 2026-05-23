@@ -6,6 +6,7 @@ import { StackView } from "@/components/portfolio/views/StackView";
 import { ProjectsView } from "@/components/portfolio/views/ProjectsView";
 import { LogsView } from "@/components/portfolio/views/LogsView";
 import { ContactView } from "@/components/portfolio/views/ContactView";
+import { Splash } from "@/components/portfolio/Splash";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -48,6 +49,7 @@ const views: Record<TabId, React.ComponentType> = {
 function Index() {
   const [tab, setTab] = useState<TabId>("home");
   const [dir, setDir] = useState<1 | -1>(1);
+  const [booting, setBooting] = useState(true);
 
   const switchTo = (next: TabId) => {
     if (next === tab) return;
@@ -61,6 +63,9 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <AnimatePresence>
+        {booting && <Splash key="splash" onDone={() => setBooting(false)} />}
+      </AnimatePresence>
       <header className="sticky top-0 z-30 backdrop-blur-md bg-black/60 border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
