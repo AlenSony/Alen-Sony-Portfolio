@@ -72,18 +72,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Operator — Full-Stack & Systems Engineer" },
+      { title: "alen_sony_portfolio" },
       {
         name: "description",
         content:
           "Portfolio of a full-stack & systems engineer. Web systems, scrapers, network protocols, local AI.",
       },
       { name: "author", content: "Operator" },
-      { property: "og:title", content: "Operator — Full-Stack & Systems Engineer" },
-      { property: "og:description", content: "Built in the dark. Nothing flashy. Everything works." },
+      { property: "og:title", content: "alen_sony_portfolio" },
+      { property: "og:description", content: "A personalized portfolio website showcasing a Full-Stack & Systems Engineer's skills and projects with a Nothing OS aesthetic." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "alen_sony_portfolio" },
+      { name: "description", content: "A personalized portfolio website showcasing a Full-Stack & Systems Engineer's skills and projects with a Nothing OS aesthetic." },
+      { name: "twitter:description", content: "A personalized portfolio website showcasing a Full-Stack & Systems Engineer's skills and projects with a Nothing OS aesthetic." },
     ],
     links: [
       {
