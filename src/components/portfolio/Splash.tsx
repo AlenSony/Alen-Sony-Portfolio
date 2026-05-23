@@ -82,7 +82,7 @@ export function Splash({ onDone }: { onDone: () => void }) {
       {/* corner ticks */}
       <div className="pointer-events-none absolute inset-6 flex items-start justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/60">
         <span>// boot</span>
-        <span>sys.operator</span>
+        <span>sys.alen_sony</span>
       </div>
       <div className="pointer-events-none absolute bottom-6 left-6 right-6 flex items-end justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground/60">
         <span>v1.0.0</span>

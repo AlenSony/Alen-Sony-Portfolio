@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Portfolio of a full-stack & systems engineer. Web systems, scrapers, network protocols, local AI.",
       },
-      { name: "author", content: "Operator" },
+      { name: "author", content: "Alen Sony" },
       { property: "og:title", content: "alen_sony_portfolio" },
       { property: "og:description", content: "A personalized portfolio website showcasing a Full-Stack & Systems Engineer's skills and projects with a Nothing OS aesthetic." },
       { property: "og:type", content: "website" },

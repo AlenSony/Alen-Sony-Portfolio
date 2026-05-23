@@ -1,4 +1,4 @@
-import { ArrowUpRight, Play, Code2 } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
@@ -12,6 +12,15 @@ const projects = [
   },
   {
     id: "02",
+    name: "PharmaNear",
+    tagline: "Pharmacy locator app",
+    description:
+      "Pharmacy locator app with Google Maps API, search functionality, and location-based services.",
+    tags: ["React", "Node.js", "MongoDB", "Express", "Node-Geocoder"],
+    accent: true,
+  },
+  {
+    id: "03",
     name: "DealHunt",
     tagline: "Internet-wide deal scraper",
     description:
@@ -19,7 +28,7 @@ const projects = [
     tags: ["Python", "Scrapers", "n8n", "Data Pipelines"],
   },
   {
-    id: "03",
+    id: "04",
     name: "Vision Guard",
     tagline: "Local privacy CV agent",
     description:
@@ -50,9 +59,7 @@ export function ProjectsView() {
                 <div className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                   Project / {p.id}
                 </div>
-                <h3 className="font-dot text-3xl sm:text-4xl uppercase mt-2">
-                  {p.name}
-                </h3>
+                <h3 className="font-dot text-3xl sm:text-4xl uppercase mt-2">{p.name}</h3>
                 <div
                   className={`font-mono text-xs mt-1 tracking-wider uppercase ${
                     p.accent ? "text-[color:var(--signal)]" : "text-muted-foreground"
@@ -74,15 +81,6 @@ export function ProjectsView() {
                   {t}
                 </span>
               ))}
-            </div>
-
-            <div className="mt-6 flex gap-3">
-              <button className="wire-btn signal">
-                <Play className="w-3.5 h-3.5" /> Demo
-              </button>
-              <button className="wire-btn">
-                <Code2 className="w-3.5 h-3.5" /> Source
-              </button>
             </div>
           </article>
         ))}

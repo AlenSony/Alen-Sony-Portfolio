@@ -1,23 +1,21 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
-import { HomeView } from "@/components/portfolio/views/HomeView";
-import { StackView } from "@/components/portfolio/views/StackView";
-import { ProjectsView } from "@/components/portfolio/views/ProjectsView";
-import { LogsView } from "@/components/portfolio/views/LogsView";
-import { ContactView } from "@/components/portfolio/views/ContactView";
 import { Splash } from "@/components/portfolio/Splash";
+import { HomeView } from "@/components/portfolio/views/HomeView";
+import { ProjectsView } from "@/components/portfolio/views/ProjectsView";
+import { StackView } from "@/components/portfolio/views/StackView";
+import { createFileRoute } from "@tanstack/react-router";
+import { AnimatePresence, motion } from "motion/react";
+import { useState } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Operator — Full-Stack & Systems Engineer" },
+      { title: "Alen Sony — Full-Stack & Systems Engineer" },
       {
         name: "description",
         content:
-          "Portfolio of a full-stack & systems engineer. Scalable web systems, scrapers, network protocols in C, and local computer vision.",
+          "Portfolio of Alen Sony, full-stack & systems engineer. Scalable web systems, scrapers, network protocols in C, and local computer vision.",
       },
-      { property: "og:title", content: "Operator — Full-Stack & Systems Engineer" },
+      { property: "og:title", content: "Alen Sony — Full-Stack & Systems Engineer" },
       {
         property: "og:description",
         content:
@@ -32,8 +30,6 @@ const TABS = [
   { id: "home", label: "Home", code: "00" },
   { id: "stack", label: "Stack", code: "01" },
   { id: "projects", label: "Work", code: "02" },
-  { id: "logs", label: "Logs", code: "03" },
-  { id: "contact", label: "Contact", code: "04" },
 ] as const;
 
 type TabId = (typeof TABS)[number]["id"];
@@ -42,8 +38,6 @@ const views: Record<TabId, React.ComponentType> = {
   home: HomeView,
   stack: StackView,
   projects: ProjectsView,
-  logs: LogsView,
-  contact: ContactView,
 };
 
 function Index() {
@@ -73,7 +67,7 @@ function Index() {
               <span className="signal-dot" />
             </div>
             <div className="font-dot text-lg uppercase leading-none">
-              Operator<span className="text-[color:var(--signal)]">.</span>
+              Alen Sony<span className="text-[color:var(--signal)]">.</span>
             </div>
           </div>
 
@@ -85,9 +79,7 @@ function Index() {
                   key={t.id}
                   onClick={() => switchTo(t.id)}
                   className={`relative px-4 py-2 rounded-full font-mono text-[11px] uppercase tracking-[0.25em] transition-colors ${
-                    active
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
+                    active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {active && (
@@ -135,10 +127,7 @@ function Index() {
 
       <main className="relative max-w-7xl mx-auto">
         {/* Stacked card stage */}
-        <div
-          className="relative"
-          style={{ perspective: "1600px" }}
-        >
+        <div className="relative" style={{ perspective: "1600px" }}>
           <AnimatePresence mode="popLayout" custom={dir} initial={false}>
             <motion.section
               key={tab}

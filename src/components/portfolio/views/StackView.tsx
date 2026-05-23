@@ -1,3 +1,5 @@
+import { ExperienceTimeline } from "../ExperienceTimeline";
+
 const groups = [
   {
     code: "01",
@@ -12,13 +14,7 @@ const groups = [
   {
     code: "03",
     title: "Systems & Networking",
-    items: [
-      "C Programming",
-      "Stop-and-Wait",
-      "Go-Back-N",
-      "Selective Repeat",
-      "Dijkstra's Algorithm",
-    ],
+    items: ["Network Protocols", "Data Structures", "Socket Programming"],
   },
   {
     code: "04",
@@ -64,6 +60,8 @@ export function StackView() {
           </div>
         ))}
       </div>
+
+      <ExperienceTimeline />
     </div>
   );
 }
