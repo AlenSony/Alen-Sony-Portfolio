@@ -72,11 +72,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Operator — Full-Stack & Systems Engineer" },
+      {
+        name: "description",
+        content:
+          "Portfolio of a full-stack & systems engineer. Web systems, scrapers, network protocols, local AI.",
+      },
+      { name: "author", content: "Operator" },
+      { property: "og:title", content: "Operator — Full-Stack & Systems Engineer" },
+      { property: "og:description", content: "Built in the dark. Nothing flashy. Everything works." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
