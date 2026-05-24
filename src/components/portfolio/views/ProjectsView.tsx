@@ -12,15 +12,24 @@ const projects = [
   },
   {
     id: "02",
+    name: "Novara",
+    tagline: "Enterprise client portal & workflow engine",
+    description:
+      "Designed and deployed a secure dashboard streamlining client onboarding, real-time project tracking, and automated data reporting with robust backend integrations.",
+    tags: ["React", "Node.js", "Tailwind CSS", "REST APIs", "Cloud Architecture"],
+    accent: true,
+  },
+  {
+    id: "03",
     name: "PharmaNear",
     tagline: "Pharmacy locator app",
     description:
       "Pharmacy locator app with Google Maps API, search functionality, and location-based services.",
     tags: ["React", "Node.js", "MongoDB", "Express", "Node-Geocoder"],
-    accent: true,
+    accent: false, // Adjusted accents slightly to balance the top projects
   },
   {
-    id: "03",
+    id: "04",
     name: "DealHunt",
     tagline: "Internet-wide deal scraper",
     description:
@@ -28,7 +37,7 @@ const projects = [
     tags: ["Python", "Scrapers", "n8n", "Data Pipelines"],
   },
   {
-    id: "04",
+    id: "05",
     name: "Vision Guard",
     tagline: "Local privacy CV agent",
     description:

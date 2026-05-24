@@ -10,6 +10,9 @@ export const getRouter = () => {
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
+    defaultPendingComponent: () => (
+      <div className="min-h-screen bg-background" aria-hidden />
+    ),
   });
 
   return router;
