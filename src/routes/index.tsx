@@ -179,6 +179,8 @@ function Index() {
 
 function ViewHeader({ tab }: { tab: TabId }) {
   const meta = TABS.find((t) => t.id === tab)!;
+  const activeDot = TABS.findIndex((t) => t.id === tab);
+
   return (
     <div className="flex items-center justify-between px-6 sm:px-8 pt-5 pb-2 border-b border-border dot-grid-bg">
       <div className="flex items-center gap-3">
@@ -187,10 +189,15 @@ function ViewHeader({ tab }: { tab: TabId }) {
           /{meta.id}
         </span>
       </div>
-      <div className="flex items-center gap-1.5">
-        <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/40" />
-        <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/40" />
-        <span className="w-1.5 h-1.5 rounded-full bg-[color:var(--signal)]" />
+      <div className="flex items-center gap-1.5" aria-label={`Page ${activeDot + 1} of ${TABS.length}`}>
+        {TABS.map((_, i) => (
+          <span
+            key={i}
+            className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${
+              i === activeDot ? "bg-[color:var(--signal)]" : "bg-muted-foreground/40"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );

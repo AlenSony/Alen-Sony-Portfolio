@@ -1,8 +1,6 @@
+import { CONTACT_EMAIL } from "@/lib/contact";
 import { Check, Copy, Send } from "lucide-react";
 import React, { useState } from "react";
-
-// Update this with your preferred contact email
-const EMAIL = "alen.sony@example.com";
 
 export function ContactView() {
   const [copied, setCopied] = useState(false);
@@ -10,7 +8,7 @@ export function ContactView() {
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(EMAIL);
+      await navigator.clipboard.writeText(CONTACT_EMAIL);
       setCopied(true);
       setTimeout(() => setCopied(false), 1800);
     } catch (err) {
@@ -67,7 +65,7 @@ export function ContactView() {
             onClick={handleCopy}
             className="w-full flex items-center justify-between border border-border bg-background/40 backdrop-blur-sm rounded-xl px-4 py-3 hover:border-foreground/40 hover:bg-background/80 transition-all duration-200 group"
           >
-            <span className="font-mono text-sm tracking-tight">{EMAIL}</span>
+            <span className="font-mono text-sm tracking-tight">{CONTACT_EMAIL}</span>
             <span
               className={`flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.25em] transition-colors duration-200 ${
                 copied

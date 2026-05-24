@@ -1,5 +1,3 @@
-import { FileText } from "lucide-react";
-
 const experiences = [
   {
     role: "Project Intern",
@@ -43,9 +41,7 @@ export function ExperienceTimeline() {
           {experiences.map((e, i) => (
             <li key={`${e.company}-${e.duration}`} className="pl-6 pb-8 last:pb-0 relative">
               <span className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-foreground" />
-              {i === 0 && (
-                <span className="absolute -left-[10px] top-0 signal-dot" />
-              )}
+              {i === 0 && <span className="absolute -left-[10px] top-0 signal-dot" />}
               <div className="flex flex-wrap items-center gap-3 text-[11px] font-mono uppercase tracking-[0.25em] text-muted-foreground">
                 <span>{e.duration}</span>
                 <span className="chip !py-0.5 !px-2 !text-[10px]">{e.type}</span>
@@ -59,17 +55,6 @@ export function ExperienceTimeline() {
                 <p className="mt-2 text-sm text-muted-foreground max-w-2xl leading-relaxed">
                   {e.focus}
                 </p>
-              )}
-              {e.certificate && (
-                <a
-                  href={e.certificate.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="wire-btn mt-4 inline-flex items-center gap-2"
-                >
-                  <FileText className="w-3.5 h-3.5" />
-                  {e.certificate.label}
-                </a>
               )}
             </li>
           ))}

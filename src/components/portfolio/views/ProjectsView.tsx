@@ -9,6 +9,7 @@ const projects = [
       "Large-scale reservation system with secure Razorpay payments, automated seat generation, admin control panel, intuitive train search, and pdfkit ticket generation.",
     tags: ["React", "Node.js", "PostgreSQL", "Razorpay", "pdfkit"],
     accent: true,
+    link: "https://github.com/AlenSony/Rail-Seat.git",
   },
   {
     id: "02",
@@ -18,6 +19,7 @@ const projects = [
       "Designed and deployed a secure dashboard streamlining client onboarding, real-time project tracking, and automated data reporting with robust backend integrations.",
     tags: ["React", "Node.js", "Tailwind CSS", "REST APIs", "Cloud Architecture"],
     accent: true,
+    link: "https://github.com/AlenSony/Novara.git",
   },
   {
     id: "03",
@@ -27,6 +29,7 @@ const projects = [
       "Pharmacy locator app with Google Maps API, search functionality, and location-based services.",
     tags: ["React", "Node.js", "MongoDB", "Express", "Node-Geocoder"],
     accent: false, // Adjusted accents slightly to balance the top projects
+    link: "https://pharmanear-frontend.onrender.com ",
   },
   {
     id: "04",
@@ -35,6 +38,7 @@ const projects = [
     description:
       "Dynamically scrapes multi-store e-commerce data, parses real-time prices, filters scam listings, and aggregates the best deals into a single, focused interface.",
     tags: ["Python", "Scrapers", "n8n", "Data Pipelines"],
+    link: "https://github.com/AlenSony/deal_hunt.git",
   },
   {
     id: "05",
@@ -43,6 +47,7 @@ const projects = [
     description:
       "Runs locally with YOLOv8 + OpenCV. Detects phones & onlookers via webcam and instantly triggers screen-blurring to prevent physical capture of digital content.",
     tags: ["YOLOv8", "OpenCV", "Python", "Tkinter"],
+    link: "https://github.com/AlenSony/Privacy-Shield.git",
   },
 ];
 
@@ -57,11 +62,14 @@ export function ProjectsView() {
       </div>
       <div className="grid grid-cols-12 gap-3 sm:gap-4">
         {projects.map((p, i) => (
-          <article
+          <a
             key={p.id}
+            href={p.link}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`widget widget-hover p-6 sm:p-8 col-span-12 ${
               i === 0 ? "md:col-span-12" : "md:col-span-6"
-            } flex flex-col`}
+            } flex flex-col cursor-pointer block no-underline text-inherit`}
           >
             <div className="flex items-start justify-between">
               <div>
@@ -91,7 +99,7 @@ export function ProjectsView() {
                 </span>
               ))}
             </div>
-          </article>
+          </a>
         ))}
       </div>
     </div>

@@ -1,4 +1,5 @@
-import { ArrowUpRight, Github, Linkedin } from "lucide-react";
+import { GMAIL_COMPOSE_URL } from "@/lib/contact";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { Clock } from "../Clock";
 
 export function HomeView() {
@@ -74,7 +75,16 @@ export function HomeView() {
         <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
           channels
         </span>
-        <div className="flex gap-3 mt-4">
+        <div className="flex flex-wrap gap-3 mt-4">
+          <a
+            href={GMAIL_COMPOSE_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Email via Gmail"
+            className="w-12 h-12 rounded-full border border-border flex items-center justify-center hover:border-foreground transition-colors"
+          >
+            <Mail className="w-4 h-4" />
+          </a>
           <a
             href="https://github.com/AlenSony"
             target="_blank"
@@ -105,7 +115,7 @@ export function HomeView() {
             Automating the future, one step at a time.
           </div>
         </div>
-        <ArrowUpRight className="w-6 h-6 text-muted-foreground" />
+        
       </div>
     </div>
   );
