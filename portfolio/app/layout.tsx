@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Stalinist_One, Lacquer } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 
@@ -11,6 +11,18 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const stalinistOne = Stalinist_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-stalinist",
+});
+
+const lacquer = Lacquer({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-lacquer",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${stalinistOne.variable} ${lacquer.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <NavBar />

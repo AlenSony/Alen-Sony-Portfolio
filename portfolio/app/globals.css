@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+.stalinist-one-regular {
+  font-family: var(--font-stalinist), "Stalinist One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lacquer-regular {
+  font-family: var(--font-lacquer), "Lacquer", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 :root {
   --background: #F0E6DA;
   --foreground: #171717;
@@ -18,18 +31,23 @@
   .neo-shadow {
     box-shadow: 10px 10px 20px #d1c9bf, -10px -10px 20px #ffffff;
   }
+
   .neo-shadow-pressed {
     box-shadow: inset 8px 8px 16px #d1c9bf, inset -8px -8px 16px #ffffff;
   }
+
   .neo-shadow-sm {
     box-shadow: 5px 5px 10px #d1c9bf, -5px -5px 10px #ffffff;
   }
+
   .neo-shadow-pressed-sm {
     box-shadow: inset 4px 4px 8px #d1c9bf, inset -4px -4px 8px #ffffff;
   }
+
   .neo-shadow-hover {
     transition: box-shadow 0.2s ease-in-out;
   }
+
   .neo-shadow-hover:hover {
     box-shadow: inset 8px 8px 16px #d1c9bf, inset -8px -8px 16px #ffffff;
   }
@@ -38,8 +56,10 @@
 .card {
   padding: 1rem 2rem;
 }
+
 .loader {
-  color: #252422;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
   font-weight: 500;
   font-size: 25px;
   -webkit-box-sizing: content-box;
@@ -63,7 +83,8 @@
   display: block;
   height: 100%;
   padding-left: 6px;
-  color: #FFC300;
+  color: #ff5900;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
   animation: spin_4991 4s infinite;
 }
 
