@@ -37,7 +37,9 @@ export default function ContactSection() {
           </p>
 
           <a 
-            href="mailto:contact@example.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=alensonythottathil2005@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-foreground text-background font-bold tracking-widest uppercase text-sm px-10 py-4 hover:bg-transparent hover:text-foreground border-2 border-foreground transition-colors duration-300 mb-20"
           >
             Say Hello
@@ -53,7 +55,7 @@ export default function ContactSection() {
             <a href="https://x.com/alensony05" className="p-3 border border-border hover:border-foreground text-foreground-muted hover:text-foreground transition-colors duration-300">
               <FaTwitter size={24} />
             </a>
-            <a href="mailto:alensonythottathil2005@gmail.com" className="p-3 border border-border hover:border-foreground text-foreground-muted hover:text-foreground transition-colors duration-300">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=alensonythottathil2005@gmail.com" target="_blank" rel="noopener noreferrer" className="p-3 border border-border hover:border-foreground text-foreground-muted hover:text-foreground transition-colors duration-300">
               <MdMail size={24} />
             </a>
           </div>

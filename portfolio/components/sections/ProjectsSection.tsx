@@ -33,9 +33,14 @@ export default function ProjectsSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="mb-20 text-center flex flex-col items-center"
+          className="mb-20 flex flex-col items-center text-center"
         >
-          <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter text-foreground mb-6">Projects</h2>
+          <span className="font-mono text-[11px] tracking-[0.25em] text-muted-foreground uppercase mb-4">
+            // Selected Work · {String(projects.length).padStart(2, "0")} entries
+          </span>
+          <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter text-foreground mb-6">
+            Projects
+          </h2>
           <div className="w-16 h-[2px] bg-foreground" />
         </motion.div>
 
@@ -47,12 +52,21 @@ export default function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: index * 0.1 }}
-              className="group border border-border bg-background p-8 hover:border-foreground transition-colors duration-300 flex flex-col h-full"
+              className="group relative border border-border bg-background p-8 hover:border-foreground transition-colors duration-300 flex flex-col h-full"
             >
+              {/* Corner brackets echoing the hero's HUD framing — appear on hover */}
+              <span className="absolute -top-px -left-px w-4 h-4 border-t border-l border-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="absolute -bottom-px -right-px w-4 h-4 border-b border-r border-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
               <div className="flex-1">
-                <h3 className="text-2xl font-bold text-foreground mb-4 tracking-tight group-hover:underline underline-offset-4 decoration-2 decoration-foreground">
-                  {project.title}
-                </h3>
+                <div className="flex items-baseline justify-between mb-5">
+                  <h3 className="text-2xl font-bold text-foreground tracking-tight group-hover:underline underline-offset-4 decoration-2 decoration-foreground">
+                    {project.title}
+                  </h3>
+                  <span className="font-mono text-xs text-muted-foreground/50 shrink-0 ml-4">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
                 <p className="text-foreground-muted mb-8 leading-relaxed font-light text-sm md:text-base">
                   {project.description}
                 </p>
@@ -61,7 +75,7 @@ export default function ProjectsSection() {
                 {project.tags.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
-                    className="px-3 py-1 border border-border text-foreground text-[10px] uppercase font-bold tracking-widest"
+                    className="px-3 py-1.5 border border-border text-muted-foreground group-hover:text-foreground group-hover:border-foreground/40 transition-colors duration-300 text-[10px] font-mono uppercase font-bold tracking-widest"
                   >
                     {tag}
                   </span>

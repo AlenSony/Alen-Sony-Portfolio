@@ -1,5 +1,5 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { GoArrowUpRight } from 'react-icons/go';
 import './CardNav.css';
 
@@ -201,13 +201,7 @@ const CardNav: React.FC<CardNavProps> = ({
             <div className="hamburger-line" />
           </div>
 
-          <div className="logo-container">
-            {logo ? (
-              <img src={logo} alt={logoAlt} className="logo" />
-            ) : logoText ? (
-              <span className="logo-text">{logoText}</span>
-            ) : null}
-          </div>
+          
 
           <button
             type="button"
