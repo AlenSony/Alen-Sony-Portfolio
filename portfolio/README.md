@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Alen Sony - Full-Stack Developer
 
-## Getting Started
+*I work with: Backend, Frontend, Automation, LLM, Agents*
 
-First, run the development server:
+## Education
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Bachelor of Technology**  
+College of Engineering, Chengannur  
+*2023 - 2027*
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Core Coursework:**
+- Data Structures
+- Algorithms
+- Database Management Systems
+- Web Technologies
+- Systems Programming
+- Network Protocols
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Experience
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Platano Learn**  
+*Full-Stack Developer Intern (December 2025 - Present)*  
+Optimized React component lifecycle management and streamlined frontend API consumption layers using Supabase.
 
-## Learn More
+**FOCES**  
+*Project Intern (August 2025 - December 2025)*  
+Engineered backend architecture for PharmaNear, integrating map-based routing services using Express.js and MongoDB.
 
-To learn more about Next.js, take a look at the following resources:
+**Prodigy InfoTech**  
+*Web Development Intern (August 2025 - September 2025)*  
+Executed backend software engineering objectives under standard engineering structures.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Cognifyz Technologies**  
+*Web Development Intern (June 2025 - July 2025)*  
+Optimized backend logic and user interfaces during daily feature sprints.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Projects
 
-## Deploy on Vercel
+**AI-Powered Multi-Agent Logistics Management & Route Optimization Platform**  
+An advanced backend system utilizing a multi-agent framework to solve complex logistics problems, automate workflows, and handle intelligent routing.  
+*Tags: Python, Multi-Agent Systems, AI, Route Optimization*
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**RailSeat / Interactive Train Booking System**  
+Features an interactive real-time seat configuration map, auto-generation booking algorithm, pdfkit pipelines, and secure Razorpay integration.  
+*Tags: React, Express.js, Razorpay, PDFKit*
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**PharmaNear / Local Inventory Tracker**  
+Built a dual-interface real-time medicine locator that maps physical stock distributions directly onto client maps with low-latency spatial routing logic.  
+*Tags: Node.js, MongoDB, Maps API, WebSockets*
+
+**Novara / Consumer Tech E-Commerce Platform**  
+Built a modern tech e-commerce experience implementing JWT session authorization and Bcrypt credential hashing.  
+*Tags: Next.js, JWT, Bcrypt, PostgreSQL*
+
+## Tech Stack
+
+Python, React, Next.js, Node.js, Express.js, Sequelize, PostgreSQL, MongoDB, Supabase, Tailwind CSS, OpenCV / YOLO, Docker, Git, C / Systems, Shopify
