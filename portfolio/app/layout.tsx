@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Bitcount_Prop_Single } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import { Providers } from "@/components/providers";
 import AmbientBackground from "@/components/ui/AmbientBackground";
 
 const geistSans = Geist({
@@ -35,9 +36,11 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${bitcount.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans text-foreground">
-        <AmbientBackground />
-        <NavBar />
-        <main className="relative z-10 flex-1 w-full">{children}</main>
+        <Providers>
+          <AmbientBackground />
+          <NavBar />
+          <main className="relative z-10 flex-1 w-full">{children}</main>
+        </Providers>
       </body>
     </html>
   );
