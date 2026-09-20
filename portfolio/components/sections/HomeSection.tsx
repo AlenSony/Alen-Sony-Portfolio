@@ -8,11 +8,17 @@ export default function HomeSection() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
     >
-      {/* Ambient background — pure grayscale glow + grid, no color tint */}
-      <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden">
-        <div className="absolute w-[600px] h-[600px] sm:w-[900px] sm:h-[900px] rounded-full bg-foreground/[0.06] blur-[120px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,black_40%,transparent_100%)]" />
-      </div>
+      {/* Background image */}
+      <div
+        className="absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url(/hero_background.png)" }}
+      />
+
+      {/* Noise overlay */}
+      <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.5] mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')]" />
+
+      {/* Gradient overlay */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70" />
 
       {/* Corner brackets — HUD / viewfinder framing, the signature device */}
       <div className="absolute inset-6 sm:inset-10 pointer-events-none z-10">
@@ -40,14 +46,7 @@ export default function HomeSection() {
         >
           
         </motion.span>
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9, duration: 0.8 }}
-          className="absolute bottom-0 right-8 sm:right-10 translate-y-1/2 bg-background px-2 text-[10px] font-mono tracking-widest text-muted-foreground/50 uppercase"
-        >
-          India / Remote
-        </motion.span>
+        
       </div>
 
       <div className="container mx-auto px-6 relative z-20 text-center">
@@ -57,32 +56,42 @@ export default function HomeSection() {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-center justify-center gap-7"
         >
-          {/* Status eyebrow — replaces decorative label with something that reads true */}
-          <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.7 }}
-            className="flex items-center gap-2 font-mono text-[11px] sm:text-xs tracking-[0.2em] text-muted-foreground uppercase"
-          >
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-foreground/40" />
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-foreground/70" />
-            </span>
-            Available for opportunities
-          </motion.div>
+          
 
           {/* Main Title — flat foreground, terminal cursor as the signature flourish */}
           <motion.h1
             initial={{ opacity: 0, letterSpacing: "-0.05em", y: 20 }}
             animate={{ opacity: 1, letterSpacing: "-0.02em", y: 0 }}
-            transition={{ delay: 0.25, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-6xl sm:text-8xl md:text-9xl font-extrabold tracking-tighter text-foreground uppercase select-none inline-flex items-baseline"
+            transition={{
+              delay: 0.25,
+              duration: 1.2,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            className="
+              text-6xl sm:text-8xl md:text-9xl
+              font-extrabold tracking-tighter
+              text-[#F5F5F0]
+              drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]
+              uppercase select-none inline-flex items-baseline
+            "
           >
             Alen Sony
+
             <motion.span
               animate={{ opacity: [1, 1, 0, 0] }}
-              transition={{ delay: 1.4, duration: 1, repeat: Infinity, times: [0, 0.5, 0.5, 1] }}
-              className="ml-2 sm:ml-3 inline-block w-[0.5ch] h-[0.7em] bg-foreground/70 translate-y-1"
+              transition={{
+                delay: 1.4,
+                duration: 1,
+                repeat: Infinity,
+                times: [0, 0.5, 0.5, 1],
+              }}
+              className="
+                ml-2 sm:ml-3
+                inline-block w-[0.5ch] h-[0.7em]
+                bg-[#F5F5F0]
+                translate-y-1
+                shadow-[0_0_8px_rgba(245,245,240,0.7)]
+              "
             />
           </motion.h1>
 
