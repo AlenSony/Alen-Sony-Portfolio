@@ -1,26 +1,35 @@
 .card-nav-container {
   position: fixed;
-  top: 1.5rem;
+  top: 14px;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
-  max-width: 800px;
+  width: min(92%, 760px);
   z-index: 50;
   box-sizing: border-box;
 }
 
 .card-nav {
   display: block;
-  height: 60px;
+  height: 54px;
   padding: 0;
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 0.75rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  background-color: rgba(14, 14, 15, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
   position: relative;
   overflow: hidden;
-  will-change: height;
-  backdrop-filter: blur(12px);
+  will-change: height, border-radius;
+  backdrop-filter: blur(18px) saturate(1.35);
+  -webkit-backdrop-filter: blur(18px) saturate(1.35);
+  transition: border-radius 0.35s ease;
+}
+
+.card-nav.open {
+  border-radius: 18px;
+  background-color: rgba(14, 14, 15, 0.88);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .card-nav-top {
@@ -28,32 +37,39 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 54px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 0.45rem 0.55rem 1.1rem;
+  padding: 6px 6px 6px 14px;
   z-index: 2;
 }
 
 .hamburger-menu {
-  height: 100%;
+  height: 32px;
+  width: 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  gap: 6px;
+  gap: 5px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
-.hamburger-menu:hover .hamburger-line {
-  opacity: 0.75;
+.hamburger-menu:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.14);
 }
 
 .hamburger-line {
-  width: 30px;
-  height: 2px;
+  width: 14px;
+  height: 1.5px;
   background-color: currentColor;
+  border-radius: 999px;
   transition:
     transform 0.25s ease,
     opacity 0.2s ease,
@@ -62,11 +78,11 @@
 }
 
 .hamburger-menu.open .hamburger-line:first-child {
-  transform: translateY(4px) rotate(45deg);
+  transform: translateY(3.25px) rotate(45deg);
 }
 
 .hamburger-menu.open .hamburger-line:last-child {
-  transform: translateY(-4px) rotate(-45deg);
+  transform: translateY(-3.25px) rotate(-45deg);
 }
 
 .logo-container {
@@ -83,34 +99,54 @@
 }
 
 .logo-text {
-  font-family: var(--font-bitcount), "Bitcount Prop Single", system-ui;
-  font-weight: 700;
-  font-size: 1.125rem;
-  letter-spacing: 0.02em;
-  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: -0.02em;
+  color: #f5f3ef;
   white-space: nowrap;
 }
 
+.logo-text::after {
+  content: " — Portfolio";
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.42);
+  margin-left: 8px;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+}
+
 .card-nav-cta-button {
-  background-color: var(--accent);
-  color: var(--background);
-  border: none;
-  border-radius: calc(0.75rem - 0.35rem);
-  padding: 0 1rem;
-  height: 100%;
-  font-weight: 500;
-  font-size: 0.875rem;
+  background-color: #f5f3ef;
+  color: #0a0a0b;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  padding: 0 14px;
+  height: 40px;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: background-color 0.3s ease, opacity 0.3s ease;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
   align-items: center;
+  display: inline-flex;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 .card-nav-cta-button:hover {
-  opacity: 0.88;
+  background-color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+
+.card-nav-cta-button:active {
+  transform: scale(0.98);
 }
 
 .card-nav-cta-button:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 1.5px solid #f2ede6;
   outline-offset: 2px;
 }
 
@@ -118,12 +154,12 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 60px;
+  top: 54px;
   bottom: 0;
-  padding: 0.5rem;
+  padding: 8px;
   display: flex;
   align-items: flex-end;
-  gap: 12px;
+  gap: 10px;
   visibility: hidden;
   pointer-events: none;
   z-index: 1;
@@ -138,20 +174,34 @@
   height: 100%;
   flex: 1 1 0;
   min-width: 0;
-  border-radius: calc(0.75rem - 0.2rem);
+  border-radius: 14px;
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 12px 16px;
-  gap: 8px;
+  padding: 14px 16px 12px;
+  gap: 10px;
   user-select: none;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.nav-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(220px 120px at 20% 0%, rgba(255, 255, 255, 0.06), transparent 60%);
+  pointer-events: none;
 }
 
 .nav-card-label {
-  font-weight: 500;
-  font-size: 22px;
-  letter-spacing: -0.5px;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.42);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
 }
 
 .nav-card-links {
@@ -162,39 +212,57 @@
 }
 
 .nav-card-link {
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   cursor: pointer;
   text-decoration: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   color: inherit;
+  opacity: 0.92;
 }
 
 .nav-card-link:hover {
-  opacity: 0.75;
+  opacity: 1;
+  transform: translateX(2px);
 }
 
 .nav-card-link:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 1.5px solid currentColor;
   outline-offset: 2px;
   border-radius: 4px;
 }
 
 .nav-card-link-active {
   opacity: 1;
-  font-weight: 600;
+}
+
+.nav-card-link-active .nav-card-link-icon {
+  transform: rotate(0deg);
+}
+
+.nav-card-link-icon {
+  font-size: 13px;
+  opacity: 0.6;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-card-link:hover .nav-card-link-icon {
+  opacity: 1;
+  transform: translate(1px, -1px);
 }
 
 @media (max-width: 768px) {
   .card-nav-container {
-    width: 90%;
-    top: 1.2em;
+    width: min(92%, 560px);
+    top: 12px;
   }
 
   .card-nav-top {
-    padding: 0.5rem 1rem;
+    padding: 6px 6px 6px 12px;
     justify-content: space-between;
   }
 
@@ -208,6 +276,10 @@
     order: 1;
   }
 
+  .logo-text::after {
+    display: none;
+  }
+
   .card-nav-cta-button {
     display: none;
   }
@@ -216,23 +288,23 @@
     flex-direction: column;
     align-items: stretch;
     gap: 8px;
-    padding: 0.5rem;
+    padding: 8px;
     bottom: 0;
     justify-content: flex-start;
   }
 
   .nav-card {
     height: auto;
-    min-height: 60px;
+    min-height: 72px;
     flex: 1 1 auto;
     max-height: none;
   }
 
   .nav-card-label {
-    font-size: 18px;
+    font-size: 10px;
   }
 
   .nav-card-link {
-    font-size: 15px;
+    font-size: 14px;
   }
 }

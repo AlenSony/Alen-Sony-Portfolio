@@ -8,12 +8,12 @@ import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col bg-[#08080a]">
       <HomeSection />
       <LayeredTextSection />
-      <SkillsSection />
       <ProjectsSection />
       <ExperienceSection />
+      <SkillsSection />
       <EducationSection />
       <ContactSection />
     </div>

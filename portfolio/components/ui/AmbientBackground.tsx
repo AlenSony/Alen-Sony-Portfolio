@@ -10,20 +10,20 @@ export default function AmbientBackground() {
     >
       <MagicRings
         color="#ffffff"
-        colorTwo="#333333"
-        ringCount={5}
-        speed={0.4}
-        attenuation={14}
-        lineThickness={1.2}
-        baseRadius={0.35}
-        radiusStep={0.1}
-        scaleRate={0.06}
-        opacity={0.18}
-        blur={3}
-        noiseAmount={0.04}
+        colorTwo="#2a2a2e"
+        ringCount={4}
+        speed={0.28}
+        attenuation={16}
+        lineThickness={1}
+        baseRadius={0.38}
+        radiusStep={0.12}
+        scaleRate={0.05}
+        opacity={0.07}
+        blur={4}
+        noiseAmount={0.025}
         followMouse={true}
-        mouseInfluence={0.05}
-        parallax={0.015}
+        mouseInfluence={0.03}
+        parallax={0.01}
         clickBurst={false}
       />
     </div>

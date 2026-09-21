@@ -13,17 +13,15 @@ const links = [
 
 const navItems: CardNavItem[] = [
   {
-    label: "Home",
-    bgColor: "#111111",
-    textColor: "#ffffff",
-    links: [
-      { label: "Home", href: "#home", ariaLabel: "Navigate to Home section" },
-    ],
+    label: "Navigate",
+    bgColor: "rgba(22,22,23,0.96)",
+    textColor: "#f5f3ef",
+    links: [{ label: "Home", href: "#home", ariaLabel: "Navigate to Home section" }],
   },
   {
     label: "Work",
-    bgColor: "#0a0a0a",
-    textColor: "#ffffff",
+    bgColor: "rgba(18,18,20,0.98)",
+    textColor: "#f5f3ef",
     links: [
       { label: "Experience", href: "#experience", ariaLabel: "Navigate to Experience section" },
       { label: "Projects", href: "#projects", ariaLabel: "Navigate to Projects section" },
@@ -31,11 +29,12 @@ const navItems: CardNavItem[] = [
     ],
   },
   {
-    label: "Education",
-    bgColor: "#333333",
-    textColor: "#ffffff",
+    label: "Profile",
+    bgColor: "rgba(28,28,30,0.98)",
+    textColor: "#f5f3ef",
     links: [
       { label: "Education", href: "#education", ariaLabel: "Navigate to Education section" },
+      { label: "Contact", href: "#contact", ariaLabel: "Navigate to Contact section" },
     ],
   },
 ];
