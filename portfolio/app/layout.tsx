@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Bitcount_Prop_Single } from "next/font/google";
+import { instrumentSerif } from "@/lib/fonts";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import { Providers } from "@/components/providers";
@@ -33,7 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${bitcount.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${bitcount.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans text-foreground">
         <Providers>

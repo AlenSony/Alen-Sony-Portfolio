@@ -1,185 +1,202 @@
+
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-  title: "AI-Based Personalized Financial Advisor",
-  summary: "Multi-agent system for expense analysis, risk profiling, and personalized investment guidance.",
-  description:
-    "A multi-agent financial advisory app with specialized agents for expense categorization, risk profiling, anomaly detection, market monitoring, and investment and loan recommendations. Deterministic Python/ML handles categorization and anomaly detection, while LLM reasoning is reserved for synthesis and explanation.",
-  tags: ["Flutter", "FastAPI", "LangGraph", "CrewAI", "Multi-Agent Systems"],
-  featured: true,
-  meta: "Case 01 — Major Project",
-},
+    title: "AI-Based Personalized Financial Advisor",
+    summary:
+      "A multi-agent system for expense analysis, risk profiling, and personalized financial guidance.",
+    description:
+      "Combines deterministic Python/ML analysis with LLM reasoning for expense categorization, anomaly detection, market monitoring, and investment recommendations.",
+    tags: ["Flutter", "FastAPI", "LangGraph", "CrewAI"],
+    category: "Major Project",
+    number: "01",
+    featured: true,
+  },
   {
     title: "RailSeat Booking System",
-    summary: "Interactive real-time seat map with booking, PDF pipelines, and payments.",
+    summary: "Interactive railway seat booking and allocation.",
     description:
-      "Features an interactive real-time seat configuration map, auto-generation booking algorithm, PDF pipelines, and secure Razorpay integration.",
+      "Real-time seat selection, booking workflows, PDF ticket generation, and Razorpay payment integration.",
     tags: ["React", "Express.js", "Razorpay", "PDFKit"],
-    featured: false,
-    meta: "Case 02 — Shipped",
+    category: "Full Stack",
+    number: "02",
   },
   {
     title: "PharmaNear Tracker",
-    summary: "Dual-interface medicine locator with low-latency spatial routing.",
+    summary: "A real-time medicine availability locator.",
     description:
-      "A dual-interface real-time medicine locator that maps physical stock distributions directly onto client maps with low-latency spatial routing logic.",
+      "Maps medicine stock availability using location-based discovery and spatial routing.",
     tags: ["Node.js", "MongoDB", "Maps API", "WebSockets"],
-    featured: false,
-    meta: "Case 03 — Shipped",
+    category: "Full Stack",
+    number: "03",
   },
   {
     title: "Novara E-Commerce",
-    summary: "Modern store with JWT auth and hardened credential flow.",
+    summary: "A modern e-commerce application.",
     description:
-      "A modern tech e-commerce experience implementing JWT session authorization and Bcrypt.",
+      "A technology-focused online store with JWT authentication, password hashing, and MongoDB integration.",
     tags: ["Next.js", "JWT", "Bcrypt", "MongoDB"],
-    featured: false,
-    meta: "Case 04 — Shipped",
+    category: "Full Stack",
+    number: "04",
   },
 ];
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="relative overflow-hidden border-t border-white/5 bg-[#0c0c0d] px-6 py-20 sm:py-28">
-      {/* Ambient wash */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(900px_420px_at_75%_0%,rgba(255,255,255,0.06),transparent_60%)]" />
-      <div className="pointer-events-none absolute inset-0 opacity-[0.035] grid-lines" />
-
-      <div className="container relative mx-auto max-w-[1320px]">
+    <section
+      id="projects"
+      className="border-t border-white/10 bg-[#0c0c0c] px-6 py-20 text-white sm:py-28"
+    >
+      <div className="mx-auto max-w-6xl">
+        {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-14 flex flex-col justify-between gap-4 sm:mb-16 sm:flex-row sm:items-end"
         >
           <div>
-            <p className="eyebrow">Selected work — 04 cases · systems &amp; interfaces</p>
-            <h2 className="mt-3 text-[clamp(30px,5vw,52px)] font-black tracking-[-0.05em] text-[#f5f3ef]">Projects</h2>
-            <p className="mt-3 max-w-[52ch] text-[14px] leading-6 text-white/55 sm:text-[15px]">
-              A compact dossier of shipped systems — each one an exercise in reliability, speed, and craft. The first
-              is the current focus.
+            <p className="mb-3 font-mono text-xs uppercase tracking-widest text-white/40">
+              Selected work / 2025–2026
+            </p>
+
+            <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+              Projects<span className="text-white/30">.</span>
+            </h2>
+
+            <p className="mt-4 max-w-lg text-sm leading-6 text-white/50">
+              A selection of projects exploring intelligent systems,
+              backend engineering, and practical software development.
             </p>
           </div>
-          <div className="hidden items-center gap-3 lg:flex">
-            <span className="h-px w-12 bg-white/10" />
-            <span className="font-mono text-[11px] tracking-[0.18em] text-white/35 uppercase">Index 02</span>
-          </div>
+
+          <span className="font-mono text-xs text-white/40">
+            04 PROJECTS
+          </span>
         </motion.div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-12">
-          {/* Featured */}
-          {projects
-            .filter((p) => p.featured)
-            .map((project, idx) => (
-              <motion.article
-                key={project.title}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.06, duration: 0.6 }}
-                className="group relative flex flex-col overflow-hidden rounded-[20px] border border-white/10 bg-white/[0.06] backdrop-blur-xl lg:col-span-7 spotlight-card"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] via-transparent to-transparent opacity-60" />
-                <div className="relative flex h-full flex-col p-6 sm:p-8">
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[10px] tracking-[0.18em] text-white/60 uppercase">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.6)]" />
-                      Featured
-                    </span>
-                    <span className="font-mono text-[10px] tracking-[0.16em] text-white/35 uppercase">{project.meta}</span>
-                  </div>
-                  <h3 className="mt-6 text-[28px] font-black leading-[0.95] tracking-[-0.04em] text-white sm:text-[32px]">
+        {/* Featured project */}
+        <motion.article
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-8 border-y border-white/10 py-7 sm:py-9"
+        >
+          <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+            <div className="max-w-2xl">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="font-mono text-xs text-white/35">
+                  01
+                </span>
+                <span className="h-px w-6 bg-white/20" />
+                <span className="text-xs text-white/50">
+                  Major Project
+                </span>
+              </div>
+
+              <h3 className="text-2xl font-medium tracking-tight sm:text-3xl">
+                {projects[0].title}
+              </h3>
+
+              <p className="mt-3 text-sm leading-6 text-white/65">
+                {projects[0].summary}
+              </p>
+
+              <p className="mt-3 max-w-xl text-sm leading-6 text-white/40">
+                {projects[0].description}
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {projects[0].tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-md border border-white/10 px-2.5 py-1.5 text-xs text-white/55"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <span className="hidden text-xs text-white/30 md:block">
+              FEATURED
+            </span>
+          </div>
+        </motion.article>
+
+        {/* Remaining projects */}
+        <div className="divide-y divide-white/10">
+          {projects.slice(1).map((project, index) => (
+            <motion.article
+              key={project.title}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.4,
+                delay: index * 0.06,
+              }}
+              className="group grid gap-4 py-7 sm:py-8 md:grid-cols-[56px_1fr_auto] md:gap-6"
+            >
+              <span className="pt-1 font-mono text-xs text-white/30">
+                {project.number}
+              </span>
+
+              <div>
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <h3 className="text-xl font-medium tracking-tight transition-colors group-hover:text-white/75">
                     {project.title}
                   </h3>
-                  <p className="mt-3 text-sm font-medium leading-6 text-white/70">{project.summary}</p>
-                  <p className="mt-3 text-sm leading-6 text-white/50">{project.description}</p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 font-mono text-[10px] font-bold tracking-[0.12em] text-white/70 uppercase"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="mt-auto flex items-center gap-3 pt-8 font-mono text-[11px] tracking-[0.16em] text-white/40 uppercase">
-                    <span className="h-px w-8 bg-white/15" />
-                    Multi-agent · 2025–2026
-                  </div>
-                </div>
-              </motion.article>
-            ))}
 
-          {/* Stack column — two cards */}
-          <div className="grid gap-6 lg:col-span-5">
-            {projects
-              .filter((p) => !p.featured)
-              .slice(0, 2)
-              .map((project, idx) => (
-                <motion.article
-                  key={project.title}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 + idx * 0.08 }}
-                  className="group relative flex flex-col overflow-hidden rounded-[18px] border border-white/5 bg-[#141416] p-6 spotlight-card sm:p-7"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-[10px] tracking-[0.16em] text-white/30 uppercase">{project.meta}</span>
-                    <span className="h-1.5 w-1.5 rounded-full bg-white/15" />
-                  </div>
-                  <h3 className="mt-4 text-[20px] font-bold leading-tight tracking-[-0.03em] text-white">{project.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-white/55">{project.summary}</p>
-                  <div className="mt-4 flex flex-wrap gap-1.5">
-                    {project.tags.slice(0, 3).map((tag) => (
-                      <span
-                        key={tag}
-                        className="border border-white/10 bg-white/[0.04] px-2.5 py-1 font-mono text-[10px] font-bold tracking-widest text-white/55 uppercase"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </motion.article>
-              ))}
-          </div>
-
-          {/* Full-width fourth */}
-          {projects
-            .filter((p) => !p.featured)
-            .slice(2)
-            .map((project) => (
-              <motion.article
-                key={project.title}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.18 }}
-                className="group relative overflow-hidden rounded-[18px] border border-white/5 bg-[#141416] p-6 sm:p-7 lg:col-span-12 spotlight-card"
-              >
-                <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-                  <div className="min-w-0 flex-1">
-                    <span className="font-mono text-[10px] tracking-[0.16em] text-white/30 uppercase">{project.meta}</span>
-                    <h3 className="mt-2 text-[22px] font-bold tracking-[-0.03em] text-white">{project.title}</h3>
-                    <p className="mt-2 max-w-[70ch] text-sm leading-6 text-white/55">{project.description}</p>
-                  </div>
-                  <div className="flex shrink-0 flex-wrap gap-2 lg:max-w-[320px] lg:justify-end">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="border border-white/10 bg-white/[0.04] px-3 py-1.5 font-mono text-[10px] font-bold tracking-widest text-white/55 uppercase"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                  <span className="text-xs text-white/35">
+                    {project.category}
+                  </span>
                 </div>
-              </motion.article>
-            ))}
+
+                <p className="mt-2 text-sm text-white/60">
+                  {project.summary}
+                </p>
+
+                <p className="mt-2 max-w-2xl text-sm leading-6 text-white/40">
+                  {project.description}
+                </p>
+
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs text-white/40"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <ArrowUpRight
+                size={18}
+                aria-hidden="true"
+                className="hidden text-white/30 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white/70 md:block"
+              />
+            </motion.article>
+          ))}
+        </div>
+
+        {/* Footer */}
+        <div className="mt-10 flex items-center justify-between border-t border-white/10 pt-5">
+          <p className="text-xs text-white/35">
+            Designed and built with curiosity.
+          </p>
+
+          <span className="font-mono text-xs text-white/30">
+            01 — 04
+          </span>
         </div>
       </div>
     </section>

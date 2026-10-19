@@ -1,5 +1,6 @@
 import HomeSection from "@/components/sections/HomeSection";
 import LayeredTextSection from "@/components/sections/LayeredTextSection";
+import ActivitySection from "@/components/sections/ActivitySection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import SkillsSection from "@/components/sections/SkillsSection";
@@ -11,6 +12,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col bg-[#08080a]">
       <HomeSection />
       <LayeredTextSection />
+      <ActivitySection />
       <ProjectsSection />
       <ExperienceSection />
       <SkillsSection />
