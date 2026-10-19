@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import ActivityTerrain from "@/components/ui/activity-terrain";
 import { fetchGitHubContributionsClient, type ContributionData } from "@/lib/github-contributions";
+import { useEffect, useState } from "react";
 
 export default function ActivitySection() {
   const [contributionData, setContributionData] = useState<ContributionData | null>(null);
@@ -47,7 +47,7 @@ export default function ActivitySection() {
   return (
     <section
       id="activity"
-      className="relative min-h-screen flex items-center justify-center bg-background py-20"
+      className="relative min-h-screen flex items-center justify-center bg-white text-black"
     >
       <div className="container mx-auto px-6 flex items-center justify-center">
         {isLoading ? (

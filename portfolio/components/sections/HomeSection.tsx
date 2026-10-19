@@ -1,4 +1,3 @@
-
 "use client";
 
 import { instrumentSerif } from "@/lib/fonts";
@@ -42,100 +41,116 @@ export default function HomeSection() {
     >
       <h1 className="sr-only">Alen Sony — Full-Stack Developer</h1>
 
-      <div className="mx-auto flex min-h-dvh w-full max-w-[1440px] flex-col px-5 pt-20 sm:px-10 sm:pt-24 lg:px-16 lg:pt-16">
-        {/* Main composition */}
-        <div className="relative flex flex-1 flex-col">
-          {/* Intro */}
-          <motion.div
-            {...reveal(0.1)}
-            className="relative z-30 pl-2 sm:pl-8 lg:pl-[8%]"
-          >
-            <p
-              className={`${instrumentSerif.className} text-xl text-black/75 sm:text-2xl`}
-            >
-              Hey, I am
-            </p>
-
-            <p className="mt-1 text-[10px] uppercase tracking-[0.24em] text-black/40 lg:hidden">
-              Full-Stack Developer
-            </p>
-          </motion.div>
-
-          {/* Main panel */}
-          <div className="relative mt-6 flex flex-1 flex-col lg:mt-0 lg:min-h-[570px]">
-            <div
-              aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 top-[22%] rounded-t-[24px] bg-[#f5f4f1] sm:rounded-t-[30px] lg:top-[31%] lg:rounded-[22px]"
-            />
-
-            {/* Name */}
-            <motion.div
-              {...reveal(0.18)}
-              className="relative z-20 pl-2 sm:pl-8 lg:absolute lg:left-[6%] lg:top-[-1%] lg:pl-0"
-            >
-              <p
-                className={`${instrumentSerif.className} uppercase leading-[0.76] tracking-[-0.065em] text-black`}
-                style={{
-                  fontSize: "clamp(5.2rem, 13.2vw, 11.5rem)",
-                }}
+      <div className="mx-auto flex min-h-dvh w-full max-w-[1440px] flex-col justify-between px-4 pt-20 sm:px-8 sm:pt-24 lg:px-14 lg:pt-12">
+        {/* Main composition wrapper */}
+        <div className="relative my-auto flex flex-1 flex-col justify-center py-4 lg:py-6">
+          {/* Editorial Stage */}
+          <div className="relative flex flex-col">
+            {/* Soft Stone Background Box (Clips the image inside it) */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 top-[115px] overflow-hidden rounded-t-[28px] bg-[#f5f4f1] sm:top-[145px] sm:rounded-t-[32px] lg:top-[130px] lg:rounded-[28px]">
+              {/* Portrait strictly bounded inside the grey box */}
+              <motion.div
+                {...reveal(0.30)}
+                className="relative ml-auto hidden h-full w-[51%] max-w-[660px] lg:block"
               >
-                ALEN
-                <br />
-                SONY
-              </p>
-            </motion.div>
-
-            {/* Portrait */}
-            <motion.div
-              {...reveal(0.28)}
-              className="pointer-events-none relative z-10 mx-auto mt-5 h-[350px] w-full max-w-[440px] sm:h-[450px] lg:absolute lg:bottom-0 lg:right-[-1%] lg:mx-0 lg:mt-0 lg:h-[112%] lg:w-[48%] lg:max-w-[650px]"
-            >
-              <Image
-                src={HERO_IMAGE.src}
-                alt="Portrait of Alen Sony"
-                fill
-                priority
-                sizes="(max-width: 1024px) 90vw, 48vw"
-                className="object-contain object-bottom lg:object-cover"
-                style={{
-                  objectPosition: HERO_IMAGE.objectPosition,
-                  filter: "grayscale(1) contrast(1.08)",
-                }}
-              />
-            </motion.div>
-
-            {/* Description and CTA */}
-            <div className="relative z-20 mt-auto px-2 pb-8 sm:px-8 sm:pb-10 lg:absolute lg:bottom-[7%] lg:left-[6%] lg:max-w-[390px] lg:px-0 lg:pb-0">
-              <motion.p
-                {...reveal(0.38)}
-                className={`${instrumentSerif.className} max-w-[320px] text-[1.35rem] leading-[1.35] text-black/80 sm:text-2xl lg:text-[1.55rem]`}
-              >
-                A Full-Stack Developer crafting reliable products and
-                thoughtful interfaces for the modern web.
-              </motion.p>
-
-              <motion.p
-                {...reveal(0.45)}
-                className="mt-4 max-w-[310px] text-sm leading-6 text-black/55"
-              >
-                From real-time systems to multi-agent applications,
-                I build software with a focus on performance and
-                clean architecture.
-              </motion.p>
-
-              <motion.div {...reveal(0.52)} className="mt-7">
-                <button
-                  type="button"
-                  onClick={scrollToProjects}
-                  className="group inline-flex items-center gap-3 rounded-full border border-black/20 px-5 py-3 text-sm text-black transition-colors duration-300 hover:bg-black hover:text-white"
-                >
-                  See My Projects
-                  <ArrowRight
-                    size={16}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </button>
+                <Image
+                  src={HERO_IMAGE.src}
+                  alt="Portrait of Alen Sony"
+                  fill
+                  priority
+                  sizes="54vw"
+                  className="object-cover object-bottom"
+                  style={{
+                    objectPosition: HERO_IMAGE.objectPosition,
+                    filter: "grayscale(1) contrast(1.08)",
+                  }}
+                />
               </motion.div>
+            </div>
+
+            {/* Foreground Content */}
+            <div className="relative z-20 flex flex-col justify-between px-5 pt-2 sm:px-10 lg:min-h-[580px] lg:pb-12 lg:pl-12 lg:pr-12">
+              {/* Top: Intro + Giant Name (straddles the top edge of the grey box) */}
+              <div>
+                <motion.div
+                  {...reveal(0.1)}
+                  className="mb-2 flex items-baseline gap-3 sm:mb-3"
+                >
+                  <p
+                    className={`${instrumentSerif.className} text-xl text-black/75 sm:text-2xl`}
+                  >
+                    Hey, I am
+                  </p>
+                  <span className="text-[10px] uppercase tracking-[0.24em] text-black/40 lg:hidden">
+                    · Full-Stack Developer
+                  </span>
+                </motion.div>
+
+                <motion.div {...reveal(0.18)}>
+                  <p
+                    className={`${instrumentSerif.className} select-none uppercase leading-[0.78] tracking-[-0.06em] text-black`}
+                    style={{
+                      fontSize: "clamp(4.75rem, 11.5vw, 10.75rem)",
+                    }}
+                  >
+                    ALEN
+                    <br />
+                    SONY
+                  </p>
+                </motion.div>
+              </div>
+
+              {/* Mobile / Tablet Portrait (Rendered inside the grey box flow on smaller screens) */}
+              <motion.div
+                {...reveal(0.28)}
+                className="pointer-events-none relative mx-auto mt-6 h-[340px] w-full max-w-[420px] overflow-hidden rounded-[20px] sm:h-[400px] lg:hidden"
+              >
+                <Image
+                  src={HERO_IMAGE.src}
+                  alt="Portrait of Alen Sony"
+                  fill
+                  priority
+                  sizes="90vw"
+                  className="object-cover object-bottom"
+                  style={{
+                    objectPosition: HERO_IMAGE.objectPosition,
+                    filter: "grayscale(1) contrast(1.08)",
+                  }}
+                />
+              </motion.div>
+
+              {/* Bottom: Description and CTA */}
+              <div className="mt-8 pb-8 sm:mt-10 sm:pb-10 lg:mt-16 lg:max-w-[420px] lg:pb-0">
+                <motion.p
+                  {...reveal(0.38)}
+                  className={`${instrumentSerif.className} text-[1.4rem] leading-[1.3] text-black/85 sm:text-2xl lg:text-[1.65rem]`}
+                >
+                  A Full-Stack Developer crafting reliable products and
+                  thoughtful interfaces for the modern web.
+                </motion.p>
+
+                <motion.p
+                  {...reveal(0.45)}
+                  className="mt-3.5 max-w-[340px] text-sm leading-relaxed text-black/60"
+                >
+                  From real-time systems to multi-agent applications, I build
+                  software with a focus on performance and clean architecture.
+                </motion.p>
+
+                <motion.div {...reveal(0.52)} className="mt-7">
+                  <button
+                    type="button"
+                    onClick={scrollToProjects}
+                    className="group inline-flex items-center gap-3 rounded-full border border-black/20 bg-white/70 px-6 py-3 text-sm font-medium text-black backdrop-blur-sm transition-all duration-300 hover:border-black hover:bg-black hover:text-white"
+                  >
+                    See My Projects
+                    <ArrowRight
+                      size={16}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </button>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -145,7 +160,7 @@ export default function HomeSection() {
           {...reveal(0.6)}
           className="relative z-30 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-t border-black/10 py-5"
         >
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-black/55">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-black/60">
             <a
               href="https://github.com/AlenSony"
               target="_blank"
@@ -172,7 +187,7 @@ export default function HomeSection() {
             </a>
           </div>
 
-          <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-black/35">
+          <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-black/40">
             Portfolio · 2026
           </span>
         </motion.footer>
